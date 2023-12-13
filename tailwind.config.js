@@ -10,7 +10,17 @@ export default {
       "workSans": ["Work Sans"],
       sans: ['"Ruda"', defaultTheme.fontFamily.sans],
     },
-    extend: {},
+    extend: { 
+      colors: {
+        'ms-background': '#F2F2F2',
+        'ms-footer': '  #11040B',
+        'ms-textFooter': '#F8F8F8',
+        'ms-brown': '#AD918F',
+        'ms-blue': '#AD918F',
+        'ms-green': '#588583',
+        'ms-creme': '#DABEB0',
+      },
+    },
   },
   plugins: [],
 };
