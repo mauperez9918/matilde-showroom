@@ -1,9 +1,21 @@
-import React from 'react'
+import Logo from "../../Images/Logo.png";
+import InstagramIcon from "../common/Icons/InstagramIcon";
+import WppIcon from "../common/Icons/WppIcon";
 
 const Navbar = () => {
   return (
-    <div>Navbar</div>
-  )
-}
+    <header className="flex w-full justify-between items-center bg-ms-background py-2 px-4">
+      <img src={Logo} className="w-32" />
+      <div className="flex">
+        <div className="border-r border-black pr-4">
+          <InstagramIcon color="black" />
+        </div>
+        <div className="pl-4">
+          <WppIcon color="black" />
+        </div>
+      </div>
+    </header>
+  );
+};
 
-export default Navbar
+export default Navbar;
