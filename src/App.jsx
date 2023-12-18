@@ -1,10 +1,18 @@
+import Accordion from "./components/Sections/Accordion";
+import Footer from "./components/layout/Footer";
+import Navbar from "./components/layout/Navbar";
+import { sectionsData } from "./data/sectionData";
+
 const App = () => {
   return (
-    <div className="text-7xl font-bodoni">
-      MATILDE funciona desde 2017, caracterizándose por básicos atemporales,
-      prendas únicas, entre otros. Te invito a visitar mi tienda y me va a
-      encantar asesorarte.
-    </div>
+    <>
+      <Navbar />
+      {sectionsData.map((section) => {
+        return <Accordion key={section.name} section={section} />;
+      })}
+
+      <Footer />
+    </>
   );
 };
 
