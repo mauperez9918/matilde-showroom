@@ -1,8 +1,12 @@
 import { useState } from "react";
 import Arrow from "../common/Icons/Arrow";
 import PropTypes from "prop-types";
+import ButtonBrown from "../common/Buttons/ButtonBrown";
 
-const Accordion = ({ section }) => {
+const Accordion = ({ section, isImage }) => {
+  const media = section.media;
+  console.log("media", media);
+
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleAccordion = () => {
@@ -10,63 +14,52 @@ const Accordion = ({ section }) => {
   };
 
   return (
-    <div className={`${isOpen ? "min-h-[600px]" : "min-h-[230px]"} p-4 ${section.color} accordion`}>
+    <div
+      className={`p-4 pb-8 relative ${
+        isOpen
+          ? "min-h-screen bg-white transition-all duration-500"
+          : `min-h-[230px] ${section.color}`
+      } accordion`}
+    >
       <div
-        className="px-4 py-2 flex flex-col gap-2 h-56 justify-between title"
+        className="px-4 py-2 flex flex-col gap-2 h-56 justify-between"
         onClick={toggleAccordion}
       >
-        <div className="flex flex-col border-b border-black text-2xl gap-2 pb-2 w-3/4">
+        <div className="flex flex-col border-b border-black text-2xl gap-2 pb-2 w-3/4 accordion-title">
           <span>{section.number}</span>
           <span>{section.name}</span>
         </div>
 
-        <div className="flex self-end items-center gap-4 pr-6 py-2">
+        {isOpen && (
+          <div className="py-4 animate__animated animate__fadeInDown animate__faster accordion-info">
+            <p dangerouslySetInnerHTML={{ __html: section.text }} />
+            {isImage && (
+              <img className="block my-0 mx-auto" src={section.media} alt="" />
+            )}
+            {section.name === "Contacto" && (
+              // TODO: mover a componente
+              <div className="accordion-contact">
+                <p className="mt-4 px-[10px]">Encontranos en:</p>
+                <ButtonBrown text="Whatsapp" />
+              </div>
+            )}
+          </div>
+        )}
+
+        <div className="flex items-center gap-4 absolute bottom-4 right-8 accordion-arrow">
           <span className="text-sm">{isOpen ? "Ver menos" : "Ver más"}</span>
           <div className={isOpen ? "rotate-180" : ""}>
             <Arrow />
           </div>
         </div>
-
-        {isOpen && (
-          <div className="h-[100px] section-info">
-            <p dangerouslySetInnerHTML={{ __html: section.text }} />
-          </div>
-        )}
       </div>
     </div>
-    // <details
-    //   name="info"
-    //   className={`p-4 ${section.color} section`}
-    //   onClick={toggleAccordion}
-    // >
-    //   <summary className="list-none">
-    //     <div className="px-4 py-2 flex flex-col gap-2 h-56 justify-between">
-    //       <div className="flex flex-col border-b border-black text-2xl gap-2 pb-2 w-3/4">
-    //         <span>{section.number}</span>
-    //         <span>{section.name}</span>
-    //       </div>
-
-    //       <div className="flex self-end items-center gap-4 pr-6 py-2">
-    //         <span className="text-sm">{isOpen ? "Ver menos" : "Ver más"}</span>
-    //         <div className={isOpen ? "rotate-180" : ""}>
-    //           <Arrow />
-    //         </div>
-    //       </div>
-    //     </div>
-    //   </summary>
-    //   <div className="section-info">
-    //     <p
-    //       className="mb-8 section-info-text"
-    //       dangerouslySetInnerHTML={{ __html: section.text }}
-    //     />
-    //     <img src="" alt="" />
-    //   </div>
-    // </details>
   );
 };
 
 Accordion.propTypes = {
   section: PropTypes.object.isRequired,
+  isImage: PropTypes.boolean,
 };
 
 export default Accordion;
