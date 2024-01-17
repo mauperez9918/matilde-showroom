@@ -7,10 +7,11 @@ const App = () => {
   return (
     <>
       <Navbar />
-      {sectionsData.map((section) => {
-        return <Accordion key={section.name} section={section} />;
-      })}
-
+      <section>
+        {sectionsData.map((section) => {
+          return <Accordion key={section.name} section={section} />;
+        })}
+      </section>
       <Footer />
     </>
   );
