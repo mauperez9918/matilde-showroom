@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 const InstagramIcon = ({ color }) => {
   return (
     <svg
@@ -25,6 +27,10 @@ const InstagramIcon = ({ color }) => {
       />
     </svg>
   );
+};
+
+InstagramIcon.propTypes = {
+  color: PropTypes.string.isRequired,
 };
 
 export default InstagramIcon;

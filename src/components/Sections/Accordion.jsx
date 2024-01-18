@@ -1,12 +1,9 @@
 import { useState } from "react";
 import Arrow from "../common/Icons/Arrow";
 import PropTypes from "prop-types";
-import ButtonBrown from "../common/Buttons/ButtonBrown";
+import Contact from "../Contact";
 
-const Accordion = ({ section, isImage }) => {
-  const media = section.media;
-  console.log("media", media);
-
+const Accordion = ({ section }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleAccordion = () => {
@@ -15,39 +12,44 @@ const Accordion = ({ section, isImage }) => {
 
   return (
     <div
-      className={`p-4 pb-8 relative ${
+      className={`accordion p-4 relative ${
         isOpen
-          ? "min-h-screen bg-white transition-all duration-500"
-          : `min-h-[230px] ${section.color}`
-      } accordion`}
+          ? `min-h-screen h-[870px] bg-white transition-all duration-500`
+          : `min-h-[230px] lg:min-h-0 ${section.color} lg:bg-white`
+      }`}
     >
       <div
-        className="px-4 py-2 flex flex-col gap-2 h-56 justify-between"
+        className={`lg:h-[104px] py-2 px-4 lg:px-[156px] flex flex-col lg:flex-row gap-2 h-56 justify-between lg:border-b lg:border-black`}
         onClick={toggleAccordion}
       >
-        <div className="flex flex-col border-b border-black text-2xl gap-2 pb-2 w-3/4 accordion-title">
-          <span>{section.number}</span>
-          <span>{section.name}</span>
+        <div className="flex flex-col lg:flex-row lg:items-center border-b border-black lg:border-transparent text-2xl gap-2 lg:gap-4 pb-2 w-3/4 accordion-title">
+          <span className="lg:text-[64px]">{section.number}</span>
+          <span className="lg:text-[32px]">{section.name}</span>
         </div>
 
         {isOpen && (
           <div className="py-4 animate__animated animate__fadeInDown animate__faster accordion-info">
             <p dangerouslySetInnerHTML={{ __html: section.text }} />
-            {isImage && (
-              <img className="block my-0 mx-auto" src={section.media} alt="" />
-            )}
-            {section.name === "Contacto" && (
-              // TODO: mover a componente
-              <div className="accordion-contact">
-                <p className="mt-4 px-[10px]">Encontranos en:</p>
-                <ButtonBrown text="Whatsapp" />
+
+            {section.name !== "Contacto" ? (
+              <div className="mb-10">
+                <img
+                  className="block my-0 mx-auto"
+                  src={section.media}
+                  alt=""
+                />
+              </div>
+            ) : (
+              <div className="mb-10">
+                <Contact />
+                <img className="block w-full mt-8" src={section.media} alt="" />
               </div>
             )}
           </div>
         )}
 
-        <div className="flex items-center gap-4 absolute bottom-4 right-8 accordion-arrow">
-          <span className="text-sm">{isOpen ? "Ver menos" : "Ver más"}</span>
+        <div className="flex items-center gap-4 absolute bottom-4 right-8 lg:static accordion-arrow">
+          <span className="text-sm lg:hidden">{isOpen ? "Ver menos" : "Ver más"}</span>
           <div className={isOpen ? "rotate-180" : ""}>
             <Arrow />
           </div>
@@ -59,7 +61,6 @@ const Accordion = ({ section, isImage }) => {
 
 Accordion.propTypes = {
   section: PropTypes.object.isRequired,
-  isImage: PropTypes.boolean,
 };
 
 export default Accordion;
