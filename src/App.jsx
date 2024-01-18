@@ -10,7 +10,7 @@ const App = () => {
       <Navbar />
       <section>
         {sectionsData.map((section) => {
-          return <Accordion key={section.name} section={section} isImage="true" />;
+          return <Accordion key={section.name} section={section} />;
         })}
       </section>
       <Footer />

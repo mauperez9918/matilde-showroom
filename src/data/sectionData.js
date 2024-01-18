@@ -1,5 +1,6 @@
 import Ana from "../Images/Ana.png"
 import perchero from "../Images/perchero.png"
+import map from "../Images/map.png"
 
 export const sectionsData = [
   {
@@ -26,7 +27,7 @@ export const sectionsData = [
   {
     name: "Contacto",
     text: "En MATILDE, valoramos la comunicación directa y estamos aquí para responder a todas tus preguntas, escuchar tus comentarios y brindarte la asistencia que necesitas. ¡No dudes en ponerte en contacto con nosotros!",
-    media: "",
+    media: map,
     number: "04",
     color: "bg-ms-creme",
   },
