@@ -4,7 +4,7 @@ const ButtonBrown = ({ icon, text }) => {
   console.log("icon", icon);
 
   return (
-    <div className="p-3 flex items-center justify-between rounded-lg bg-ms-brown">
+    <div className="p-3 flex items-center justify-between rounded-lg bg-ms-creme">
       <div>{icon}</div>
       <div>{text}</div>
     </div>

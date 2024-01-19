@@ -12,9 +12,9 @@ const Accordion = ({ section }) => {
 
   return (
     <div
-      className={`accordion p-4 relative ${
+      className={`accordion p-4 relative transition-all duration-500 bg-ms-background ${
         isOpen
-          ? `min-h-screen h-[870px] bg-white transition-all duration-500`
+          ? `min-h-screen h-[870px] bg-ms-background `
           : `min-h-[230px] lg:min-h-0 ${section.color} lg:bg-white`
       }`}
     >
@@ -48,8 +48,10 @@ const Accordion = ({ section }) => {
           </div>
         )}
 
-        <div className="flex items-center gap-4 absolute bottom-4 right-8 lg:static accordion-arrow">
-          <span className="text-sm lg:hidden">{isOpen ? "Ver menos" : "Ver más"}</span>
+        <div className="flex items-center gap-4 absolute bottom-3 right-8 lg:static accordion-arrow">
+          <span className="text-sm lg:hidden">
+            {isOpen ? "Ver menos" : "Ver más"}
+          </span>
           <div className={isOpen ? "rotate-180" : ""}>
             <Arrow />
           </div>
