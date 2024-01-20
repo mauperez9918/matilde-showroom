@@ -8,10 +8,10 @@ const Navbar = () => {
       <img src={Logo} className="w-32" alt="" />
       <div className="flex">
         <div className="border-r border-black pr-4">
-          <InstagramIcon color="black" />
+          <InstagramIcon color="black" size="48" />
         </div>
         <div className="pl-4">
-          <WppIcon color="black" />
+          <WppIcon color="black" size="48" />
         </div>
       </div>
     </header>

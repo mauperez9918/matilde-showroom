@@ -19,7 +19,9 @@ const Accordion = ({ section }) => {
       }`}
     >
       <div
-        className={`lg:h-[104px] py-2 px-4 lg:px-[156px] flex flex-col lg:flex-row gap-2 h-56 justify-between lg:border-b lg:border-black`}
+        className={`lg:h-[104px] py-2 px-4 lg:px-[156px] flex flex-col ${
+          isOpen ? "lg:flex-col" : "lg:flex-row"
+        } gap-2 h-56 justify-between lg:border-b lg:border-black`}
         onClick={toggleAccordion}
       >
         <div className="flex flex-col lg:flex-row lg:items-center border-b border-black lg:border-transparent text-2xl gap-2 lg:gap-4 pb-2 w-3/4 accordion-title">
@@ -28,7 +30,7 @@ const Accordion = ({ section }) => {
         </div>
 
         {isOpen && (
-          <div className="py-4 animate__animated animate__fadeInDown animate__faster accordion-info">
+          <div className="py-4 lg:py-16 animate__animated animate__fadeInDown animate__faster accordion-info">
             <p dangerouslySetInnerHTML={{ __html: section.text }} />
 
             {section.name !== "Contacto" ? (
@@ -42,7 +44,11 @@ const Accordion = ({ section }) => {
             ) : (
               <div className="mb-10">
                 <Contact />
-                <img className="block w-full mt-8" src={section.media} alt="" />
+                <img
+                  className="block w-full mt-8"
+                  src={section.media}
+                  alt="Mapa"
+                />
               </div>
             )}
           </div>

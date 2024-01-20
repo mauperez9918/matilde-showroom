@@ -1,10 +1,8 @@
 import PropTypes from "prop-types";
 
 const ButtonBrown = ({ icon, text }) => {
-  console.log("icon", icon);
-
   return (
-    <div className="p-3 flex items-center justify-between rounded-lg bg-ms-creme">
+    <div className="w-36 h-12 text-xs flex justify-evenly pr-4 pl-2 items-center bg-ms-creme rounded-lg shadow-md">
       <div>{icon}</div>
       <div>{text}</div>
     </div>

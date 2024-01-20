@@ -1,12 +1,14 @@
-import bannerImage1 from "../../Images/img-banner01.png";
-import bannerImage2 from "../../Images/img-banner02.png";
+import bannerWeb1 from "../../Images/img-banner01.png";
+import bannerWeb2 from "../../Images/img-banner02.png";
+import bannerMobile from "../../Images/banner-mobile.png";
 
 const Banner = () => {
   return (
-    <div className="z-10 h-52">
-      <img className="fixed top-6" src={bannerImage2} alt="Imagen " />
-      <div className="absolute text-center w-full h-52 grid place-content-center">
-        <span>Prendas únicas y esenciales</span>
+    <div className="relative w-screen">
+      <img className="w-screen" src={bannerMobile} alt="Imagen Banner" />
+      <div className="font-bodoni last:flex flex-col items-center absolute inset-x-0 bottom-1/4 w-full text-white text-2xl sm:text-5xl">
+        <span>Prendas únicas</span>
+        <span>y esenciales</span>
       </div>
     </div>
   );
