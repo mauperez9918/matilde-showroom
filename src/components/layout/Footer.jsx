@@ -1,10 +1,9 @@
-import React from "react";
 import InstagramIcon from "../common/Icons/InstagramIcon";
 import WppIcon from "../common/Icons/WppIcon";
 
 const Footer = () => {
   return (
-    <footer className="bg-ms-footer text-white flex px-4 py-2 justify-between font-bold">
+    <footer className="absolute z-50py-2 px-4 lg:px-[156px] flex justify-between font-bold bg-ms-footer text-white">
       <div className="flex-col flex w-1/2">
         <span className="font-bodoni">CONTACTO</span>
         <span className="text-sm pl-3 mt-2">xxxxx - xxx xxxxxx</span>
