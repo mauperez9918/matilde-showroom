@@ -2,6 +2,7 @@ import { useState } from "react";
 import Arrow from "../common/Icons/Arrow";
 import PropTypes from "prop-types";
 import Contact from "../Contact";
+import Caroussel from "../Caroussel/Caroussel";
 
 const Accordion = ({ section }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -19,7 +20,7 @@ const Accordion = ({ section }) => {
       }`}
     >
       <div
-        className={`lg:h-[104px] py-2 px-4 lg:px-[156px] flex flex-col ${
+        className={`accordion-title lg:h-[104px] py-2 px-4 lg:px-[156px] flex flex-col ${
           isOpen ? "lg:flex-col" : "lg:flex-row"
         } gap-2 h-56 justify-between lg:border-b lg:border-black`}
         onClick={toggleAccordion}
@@ -33,7 +34,7 @@ const Accordion = ({ section }) => {
           <div className="py-4 lg:py-16 animate__animated animate__fadeInDown animate__faster accordion-info">
             <p dangerouslySetInnerHTML={{ __html: section.text }} />
 
-            {section.name !== "Contacto" ? (
+            {section.name !== "Contacto" && (
               <div className="mb-10">
                 <img
                   className="block my-0 mx-auto"
@@ -41,7 +42,13 @@ const Accordion = ({ section }) => {
                   alt=""
                 />
               </div>
-            ) : (
+            )}
+            {section.name === "Producciones" && (
+              <div className="mb-10">
+                <Caroussel />
+              </div>
+            )}
+            {section.name === "Contacto" && (
               <div className="mb-10">
                 <Contact />
                 <img

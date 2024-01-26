@@ -10,7 +10,7 @@ const App = () => {
     <>
       <Navbar />
       <Banner />
-      <section>
+      <section className="accordionWrapper">
         {sectionsData.map((section) => {
           return <Accordion key={section.name} section={section} />;
         })}
