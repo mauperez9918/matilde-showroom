@@ -1,47 +1,86 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import carousselData from "../../data/carousselData";
-import Arrow from "../common/Icons/Arrow";
+import Arrows from "./Arrows";
 
 const Caroussel = () => {
   const [position, setPosition] = useState(0);
 
-  useEffect(() => {
-    console.log("position", position);
-  }, [position]);
+  const handlePositionChange = (newPosition) => {
+    setPosition(newPosition);
+  };
 
   const increasePosition = () => {
-    setPosition((prevPosition) => prevPosition + 1);
+    const newPosition =
+      position === carousselData.length - 1 ? 0 : position + 1;
+    handlePositionChange(newPosition);
   };
 
   const decreasePosition = () => {
-    setPosition((prevPosition) => prevPosition - 1);
+    const newPosition =
+      position === 0 ? carousselData.length - 1 : position - 1;
+    handlePositionChange(newPosition);
   };
 
   return (
-    <div className="relative carousselWrapper">
-      <div className="h-full w-auto absolute top-0 left-0 bg-red-500 z-50 arrow-previous">
+    <div className="relative mt-9">
+      <div className="w-full flex carousselWrapper transition-all duration-800">
+        {/* IMG LEFT */}
         <div
-          className="relative top-[50%] rotate-90"
-          onClick={decreasePosition}
+          className={`w-[75px] self-end caroussel-previousImage ${
+            position > 0 ? "visible opacity-100" : "invisible opacity-0"
+          } transition-all duration-800`}
         >
-          <Arrow />
+          <img
+            src={
+              position > 0
+                ? carousselData[position - 1].imageUrl
+                : carousselData[position].imageUrl
+            }
+            alt={
+              position > 0
+                ? `produccion ${position - 1}`
+                : `produccion ${position}`
+            }
+          />
         </div>
-      </div>
 
-      <div className="w-full caroussel-imageWrapper">
-        <img
-          src={carousselData[position].imageUrl}
-          alt=""
-          className="max-w-[260px] my-0 mx-auto"
-        />
-      </div>
-      <div className="h-full w-auto absolute top-0 right-0 bg-green-500 z-50 arrow-next">
-        <div
-          className="relative top-[50%] -rotate-90"
-          onClick={increasePosition}
-        >
-          <Arrow />
+        {/* MAIN IMAGE */}
+        <div className="w-auto mx-3 caroussel-imageWrapper">
+          <img
+            src={carousselData[position].imageUrl}
+            alt={`produccion ${position}`}
+            className="my-0 mx-auto opacity-100 transition-all duration-800"
+          />
         </div>
+
+        {/* IMG RIGHT */}
+        <div
+          className={`w-[75px] self-end caroussel-nextImage ${
+            position === carousselData.length - 1
+              ? "invisible opacity-0"
+              : "visible opacity-100"
+          } transition-all duration-800`}
+        >
+          <img
+            src={
+              position === carousselData.length - 1
+                ? carousselData[position].imageUrl
+                : carousselData[position + 1].imageUrl
+            }
+            alt={
+              position === carousselData.length - 1
+                ? `produccion ${position}`
+                : `produccion ${position + 1}`
+            }
+          />
+        </div>
+      </div>
+      <div className="carousselArrows">
+        <Arrows
+          position={position}
+          increasePosition={increasePosition}
+          decreasePosition={decreasePosition}
+        />
       </div>
     </div>
   );
