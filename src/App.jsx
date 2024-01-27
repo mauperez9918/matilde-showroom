@@ -11,12 +11,12 @@ const App = () => {
     <>
       <Navbar />
       <Banner />
-      {/* <section className="accordionWrapper">
+      <section>
         {sectionsData.map((section) => {
           return <Accordion key={section.name} section={section} />;
         })}
-      </section> */}
-      <Caroussel />
+        {/* <Caroussel images={carousselData} /> */}
+      </section>
       <Footer />
     </>
   );

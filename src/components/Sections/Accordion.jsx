@@ -3,6 +3,7 @@ import Arrow from "../common/Icons/Arrow";
 import PropTypes from "prop-types";
 import Contact from "../Contact";
 import Caroussel from "../Caroussel/Caroussel";
+import carousselData from "../../data/carousselData";
 
 const Accordion = ({ section }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -23,9 +24,11 @@ const Accordion = ({ section }) => {
         className={`accordion-title lg:h-[104px] py-2 px-4 lg:px-[156px] flex flex-col ${
           isOpen ? "lg:flex-col" : "lg:flex-row"
         } gap-2 h-56 justify-between lg:border-b lg:border-black`}
-        onClick={toggleAccordion}
       >
-        <div className="flex flex-col lg:flex-row lg:items-center border-b border-black lg:border-transparent text-2xl gap-2 lg:gap-4 pb-2 w-3/4 accordion-title">
+        <div
+          className="flex flex-col lg:flex-row lg:items-center border-b border-black lg:border-transparent text-2xl gap-2 lg:gap-4 pb-2 w-3/4 accordion-title"
+          onClick={toggleAccordion}
+        >
           <span className="lg:text-[64px]">{section.number}</span>
           <span className="lg:text-[32px]">{section.name}</span>
         </div>
@@ -45,7 +48,7 @@ const Accordion = ({ section }) => {
             )}
             {section.name === "Producciones" && (
               <div className="mb-10">
-                <Caroussel />
+                <Caroussel images={carousselData} />
               </div>
             )}
             {section.name === "Contacto" && (
@@ -61,7 +64,10 @@ const Accordion = ({ section }) => {
           </div>
         )}
 
-        <div className="flex items-center gap-4 absolute bottom-3 right-8 lg:static accordion-arrow">
+        <div
+          className="flex items-center gap-4 absolute bottom-3 right-8 lg:static accordion-arrow"
+          onClick={toggleAccordion}
+        >
           <span className="text-sm lg:hidden">
             {isOpen ? "Ver menos" : "Ver más"}
           </span>
