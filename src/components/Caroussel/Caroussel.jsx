@@ -12,7 +12,6 @@ const Caroussel = ({ images }) => {
     centerMode: true,
     infinite: true,
     dots: false,
-    // centerPadding: "30px",
     centerPadding: "60px",
     slidesToShow: 1,
     speed: 500,
