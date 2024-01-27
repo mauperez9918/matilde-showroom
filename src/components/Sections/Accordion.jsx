@@ -16,7 +16,7 @@ const Accordion = ({ section }) => {
     <div
       className={`accordion p-4 relative transition-all duration-500 bg-ms-background ${
         isOpen
-          ? `min-h-screen h-[870px] bg-ms-background `
+          ? `min-h-screen md:min-h-0 h-[900px] md:h-[750px] bg-ms-background `
           : `min-h-[230px] lg:min-h-0 ${section.color} lg:bg-white`
       }`}
     >
@@ -35,31 +35,38 @@ const Accordion = ({ section }) => {
 
         {isOpen && (
           <div className="py-4 lg:py-16 animate__animated animate__fadeInDown animate__faster accordion-info">
-            <p dangerouslySetInnerHTML={{ __html: section.text }} />
-
-            {section.name !== "Contacto" && (
-              <div className="mb-10">
-                <img
-                  className="block my-0 mx-auto"
-                  src={section.media}
-                  alt=""
-                />
-              </div>
+            {section.name !== "Contacto" && section.name !== "Producciones" && (
+              <>
+                <p dangerouslySetInnerHTML={{ __html: section.text }} />
+                <div>
+                  <img
+                    className="block my-0 mx-auto"
+                    src={section.media}
+                    alt="image"
+                  />
+                </div>
+              </>
             )}
             {section.name === "Producciones" && (
-              <div className="mb-10">
-                <Caroussel images={carousselData} />
-              </div>
+              <>
+                <p dangerouslySetInnerHTML={{ __html: section.text }} />
+                <div className="mt-9">
+                  <Caroussel images={carousselData} />
+                </div>
+              </>
             )}
             {section.name === "Contacto" && (
-              <div className="mb-10">
-                <Contact />
-                <img
-                  className="block w-full mt-8"
-                  src={section.media}
-                  alt="Mapa"
-                />
-              </div>
+              <>
+                <p dangerouslySetInnerHTML={{ __html: section.text }} />
+                <div>
+                  <Contact />
+                  <img
+                    className="block w-full mt-8"
+                    src={section.media}
+                    alt="Mapa"
+                  />
+                </div>
+              </>
             )}
           </div>
         )}
