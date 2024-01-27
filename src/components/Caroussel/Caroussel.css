@@ -1,0 +1,7 @@
+.slick-slide{
+  transform: scale(0.9);
+}
+
+.slick-slide.slick-active.slick-center.slick-current{
+  transform: scale(1);
+}

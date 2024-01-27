@@ -1,16 +1,18 @@
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import "./Caroussel.css"
 
 import PropTypes from "prop-types";
 
 const Caroussel = ({ images }) => {
   const settings = {
+    
     className: "center",
     centerMode: true,
     infinite: true,
     dots: false,
-    initialSlide: 0,
+    // centerPadding: "30px",
     centerPadding: "60px",
     slidesToShow: 1,
     speed: 500,
