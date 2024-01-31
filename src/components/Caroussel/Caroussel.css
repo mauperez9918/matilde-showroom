@@ -1,0 +1,12 @@
+.slick-slide{
+  transform: scale(0.9);
+  transition: transform 0.3s ease;
+}
+
+.slick-slide.slick-active.slick-center.slick-current{
+  transform: scale(1);
+}
+
+.slick-arrow:before{
+  color: #588583
+}
