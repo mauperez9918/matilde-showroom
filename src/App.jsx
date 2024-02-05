@@ -10,11 +10,13 @@ const App = () => {
     <>
       <Navbar />
       <Banner />
-      <section>
-        {sectionsData.map((section) => {
-          return <Accordion key={section.name} section={section} />;
-        })}
-      </section>
+      <div className="bg-ms-background">
+        <section className="lg:pt-36 lg:pb-60">
+          {sectionsData.map((section) => {
+            return <Accordion key={section.name} section={section} />;
+          })}
+        </section>
+      </div>
       <Footer />
     </>
   );

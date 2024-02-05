@@ -17,7 +17,7 @@ const Caroussel = ({ images }) => {
   };
 
   return (
-    <div className="h-screen">
+    <div>
       <Slider {...settings}>
         {images.map((image, index) => {
           return (

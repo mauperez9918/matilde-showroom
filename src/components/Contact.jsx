@@ -7,9 +7,9 @@ const wppIcon = <WppIcon color="#000" size="38" />;
 
 const Contact = () => {
   return (
-    <div className="accordion-contact">
+    <div className="accordion-contact justify-center min-[528px]:flex-row sm:flex ">
       <p className="mt-4 px-[10px]">Encontranos en:</p>
-      <div className="flex justify-between items-center gap-8 py-2">
+      <div className="flex items-center gap-8 py-2">
         <ButtonBrown icon={wppIcon} text="Whatsapp" />
         <ButtonBrown icon={instagramIcon} text="Instagram" />
       </div>

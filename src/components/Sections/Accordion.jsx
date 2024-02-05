@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Arrow from "../common/Icons/Arrow";
 import PropTypes from "prop-types";
 import Contact from "../Contact";
@@ -12,21 +12,27 @@ const Accordion = ({ section }) => {
     setIsOpen(!isOpen);
   };
 
+  useEffect(() => {
+    console.log(isOpen);
+  }, [isOpen]);
+
   return (
     <div
-      className={`accordion p-4 relative transition-all duration-500 bg-ms-background ${
+      className={`accordion relative transition-all duration-500 lg:w-[80%] m-auto ${
         isOpen
-          ? `min-h-screen md:min-h-0 h-[900px] md:h-[750px] bg-ms-background `
-          : `min-h-[230px] lg:min-h-0 ${section.color} lg:bg-white`
+          ? `min-h-screen md:min-h-0 h-[900px] md:h-[750px]`
+          : `min-h-[230px] lg:min-h-0 ${section.color}  lg:bg-ms-background`
       }`}
     >
       <div
-        className={`accordion-title lg:h-[104px] py-2 px-4 lg:px-[156px] flex flex-col ${
-          isOpen ? "lg:flex-col" : "lg:flex-row"
+        className={`accordion-title lg:h-[104px] lg:mx-0 flex flex-col ${
+          isOpen ? `lg:flex-col ${section.color}` : "lg:flex-row"
         } gap-2 h-56 justify-between lg:border-b lg:border-black`}
       >
         <div
-          className="flex flex-col lg:flex-row lg:items-center border-b border-black lg:border-transparent text-2xl gap-2 lg:gap-4 pb-2 w-3/4 accordion-title"
+          className={`flex flex-col lg:flex-row lg:w-full lg:h-full lg:items-center border-b border-black lg:border-transparent text-2xl lg:px-6 gap-2 lg:gap-4 pb-2 w-3/4 accordion-title ${
+            isOpen && "lg:mt-8"
+          }`}
           onClick={toggleAccordion}
         >
           <span className="lg:text-[64px]">{section.number}</span>
@@ -34,13 +40,16 @@ const Accordion = ({ section }) => {
         </div>
 
         {isOpen && (
-          <div className="py-4 lg:py-16 animate__animated animate__fadeInDown animate__faster accordion-info">
+          <div className="py-44 animate__animated animate__fadeIn accordion-info lg:flex justify-between">
             {section.name !== "Contacto" && section.name !== "Producciones" && (
               <>
-                <p dangerouslySetInnerHTML={{ __html: section.text }} />
-                <div>
+                <p
+                  className="lg:w-2/5 lg: mt-5"
+                  dangerouslySetInnerHTML={{ __html: section.text }}
+                />
+                <div className="right-56 lg:absolute z-50">
                   <img
-                    className="block my-0 mx-auto"
+                    className="my-0 mx-auto"
                     src={section.media}
                     alt="image"
                   />
@@ -60,11 +69,13 @@ const Accordion = ({ section }) => {
                 <p dangerouslySetInnerHTML={{ __html: section.text }} />
                 <div>
                   <Contact />
-                  <img
-                    className="block w-full mt-8"
-                    src={section.media}
-                    alt="Mapa"
-                  />
+                  <div className="w-full h-96 justify-center flex">
+                    <img
+                      className="w-auto h-64 mt-10"
+                      src={section.media}
+                      alt="Mapa"
+                    />
+                  </div>
                 </div>
               </>
             )}

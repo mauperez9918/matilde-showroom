@@ -1,6 +1,6 @@
-import Ana from "../Images/Ana.png"
-import perchero from "../Images/perchero.png"
-import map from "../Images/map.png"
+import Ana from "../Images/Ana.png";
+import perchero from "../Images/perchero.png";
+import map from "../Images/map.png";
 
 export const sectionsData = [
   {
