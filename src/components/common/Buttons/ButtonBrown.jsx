@@ -1,5 +1,6 @@
 import PropTypes from "prop-types";
 
+//TODO: implement children, implement button color
 const ButtonBrown = ({ icon, text }) => {
   return (
     <div className="w-36 h-12 text-xs flex justify-evenly pr-4 pl-2 items-center bg-ms-creme rounded-lg shadow-md">
