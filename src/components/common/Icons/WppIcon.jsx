@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 const WppIcon = ({ color, size }) => {
   return (
     <svg
@@ -14,5 +16,10 @@ const WppIcon = ({ color, size }) => {
     </svg>
   );
 };
+
+WppIcon.propTypes = {
+  color: PropTypes.string.isRequired,
+  size: PropTypes.number.isRequired
+}
 
 export default WppIcon;

@@ -5,6 +5,7 @@ import PropTypes from "prop-types";
 // import Caroussel from "../Caroussel/Caroussel";
 // import carousselData from "../../data/carousselData";
 import AccordionInner from "./AccordionInner";
+import "./Accordion.css"
 
 const Accordion = ({ section }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -13,13 +14,18 @@ const Accordion = ({ section }) => {
     setIsOpen(!isOpen);
   };
 
+  console.log("section.color", section.color);
+
   return (
     <div className="accordion">
       {/* TODO: hover on color */}
       <div
-        className={`accordion-title p-6 flex items-center justify-between border-b border-black ${
-          !isOpen ? "lg:bg-transparent" : section.color
-        }`}
+        // className={`accordion-title p-6 flex items-center justify-between border-b border-black cursor-pointer
+        // ${ !isOpen ? "lg:bg-transparent" : section.color }
+        // `}
+        className={`accordion-title p-6 flex items-center justify-between border-b border-black cursor-pointer 
+        ${ !isOpen ? "lg:bg-transparent" : section.color }
+        `}
         onClick={toggleAccordion}
       >
         <div className="flex items-center gap-6">
