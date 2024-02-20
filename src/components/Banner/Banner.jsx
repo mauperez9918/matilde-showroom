@@ -4,26 +4,26 @@ import bannerMobile from "../../Images/banner-mobile.png";
 
 const Banner = () => {
   return (
-    <div className="relative md:flex">
+    <div className="relative lg:flex">
       <img
-        className="w-full md:hidden"
+        className="w-full lg:hidden"
         src={bannerMobile}
         alt="Imagen Banner 2"
       />
 
       <img
-        className="hidden w-1/2 md:flex"
+        className="hidden w-1/2 lg:flex"
         src={bannerDesktop1}
         alt="Imagen Banner 2"
       />
 
       <img
-        className="hidden w-1/2 md:flex"
+        className="hidden w-1/2 lg:flex"
         src={bannerDesktop2}
         alt="Imagen Banner"
       />
 
-      <div className="font-bodoni last:flex flex-col items-center absolute inset-x-0 bottom-1/4 w-full text-white text-2xl sm:text-5xl lg:text-6xl">
+      <div className="font-bodoni last:flex flex-col items-center absolute inset-x-0 bottom-1/4 w-full text-white text-2xl sm:text-[44px] lg:text-6xl">
         <span>Prendas únicas</span>
         <span>y esenciales</span>
       </div>

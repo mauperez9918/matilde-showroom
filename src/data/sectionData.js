@@ -21,7 +21,7 @@ export const sectionsData = [
   },
   {
     name: "Producciones",
-    text: "En MATILDE, cada prenda cuenta una historia única. Desde elegantes básicos que nunca pasan de moda hasta piezas exclusivas que reflejan tu personalidad.<br><br>Te invitamos a descubrir las colecciones que hemos preparado con esmero y pasión. Podrás ver la dedicación que ponemos en cada una de nuestras propuestas. ",
+    text: "En MATILDE, cada prenda cuenta una historia única. Desde elegantes básicos que nunca pasan de moda hasta piezas exclusivas que reflejan tu personalidad.<br><br>Te invitamos a descubrir las colecciones que hemos preparado con esmero y pasión. Podrás ver la dedicación que ponemos en cada una de nuestras propuestas.<br><br>¡Para ver más seguinos en nuestras redes!",
     media: "",
     number: "03",
     color: "bg-ms-green",

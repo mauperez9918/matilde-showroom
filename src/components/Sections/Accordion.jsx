@@ -1,11 +1,8 @@
 import { useState } from "react";
 import Arrow from "../common/Icons/Arrow";
 import PropTypes from "prop-types";
-// import Contact from "../Contact";
-// import Caroussel from "../Caroussel/Caroussel";
-// import carousselData from "../../data/carousselData";
 import AccordionInner from "./AccordionInner";
-import "./Accordion.css"
+import "./Accordion.css";
 
 const Accordion = ({ section }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -14,30 +11,30 @@ const Accordion = ({ section }) => {
     setIsOpen(!isOpen);
   };
 
-  console.log("section.color", section.color);
-
   return (
     <div className="accordion">
-      {/* TODO: hover on color */}
       <div
-        // className={`accordion-title p-6 flex items-center justify-between border-b border-black cursor-pointer
-        // ${ !isOpen ? "lg:bg-transparent" : section.color }
-        // `}
-        className={`accordion-title p-6 flex items-center justify-between border-b border-black cursor-pointer 
-        ${ !isOpen ? "lg:bg-transparent" : section.color }
+        className={`accordion-title p-4 md:py-4 md:px-16 lg:p-8 flex flex-col lg:flex-row lg:items-center lg:justify-between lg:border-b lg:border-black cursor-pointer
+        ${section.color}
+        ${!isOpen ? "lg:bg-transparent" : section.color}
         `}
         onClick={toggleAccordion}
       >
-        <div className="flex items-center gap-6">
-          <span className="lg:text-[64px]">{section.number}</span>
-          <span className="lg:text-[32px]">{section.name}</span>
+        <div className="w-2/3 md:w-1/2 lg:w-auto flex flex-col lg:flex-row lg:items-center gap-2 lg:gap-6 border-b border-black lg:border-b-0 pb-2 lg:pb-0">
+          <span className="text-2xl lg:text-[64px]">{section.number}</span>
+          <span className="text-2xl lg:text-[32px]">{section.name}</span>
         </div>
-        <div
-          className={`arrowContainer ${
-            isOpen ? "rotate-180 transition-all duration-200 ease-in-out" : ""
-          }`}
-        >
-          <Arrow />
+        <div className="flex lg:block gap-2 self-end lg:self-auto mt-20 md:mt-9 lg:mt-0">
+          <p className="text-xs lg:hidden">
+            {isOpen ? "Ver menos" : "Ver más"}...
+          </p>
+          <div
+            className={`arrowContainer ${
+              isOpen ? "rotate-180 transition-all duration-200 ease-in-out" : ""
+            }`}
+          >
+            <Arrow />
+          </div>
         </div>
       </div>
       {isOpen && (

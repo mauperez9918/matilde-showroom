@@ -10,8 +10,8 @@ const Contact = () => {
     <div className="accordion-contact justify-center min-[528px]:flex-row sm:flex ">
       <p className="mt-4 px-[10px]">Encontranos en:</p>
       <div className="flex items-center gap-8 py-2">
-        <Button icon={wppIcon} text="Whatsapp" />
-        <Button icon={instagramIcon} text="Instagram" />
+        <Button icon={wppIcon}>Whatsapp</Button>
+        <Button icon={instagramIcon}>Instagram</Button>
       </div>
     </div>
   );
