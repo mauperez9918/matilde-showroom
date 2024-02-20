@@ -2,8 +2,8 @@ import PropTypes from "prop-types";
 
 const Button = ({ icon: Icon, text, isBrown, isBlack }) => {
   return (
-    <div
-      className={`w-36 h-12 text-sm flex justify-evenly pr-4 pl-2 items-center rounded-lg shadow-md cursor-pointer ${
+    <button
+      className={`w-36 h-12 text-sm flex justify-evenly pr-4 pl-2 items-center rounded-lg shadow-md ${
         isBrown ? "bg-ms-creme" : ""
       }
       ${isBlack ? "bg-black text-white" : ""}`}
@@ -12,7 +12,7 @@ const Button = ({ icon: Icon, text, isBrown, isBlack }) => {
         <Icon />
       </div>
       <p>{text}</p>
-    </div>
+    </button>
   );
 };
 
