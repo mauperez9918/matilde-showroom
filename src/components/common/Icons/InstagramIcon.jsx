@@ -31,6 +31,7 @@ const InstagramIcon = ({ color, size }) => {
 
 InstagramIcon.propTypes = {
   color: PropTypes.string.isRequired,
+  size: PropTypes.number.isRequired,
 };
 
 export default InstagramIcon;

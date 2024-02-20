@@ -14,19 +14,20 @@ const Accordion = ({ section }) => {
   return (
     <div className="accordion">
       <div
-        className={`accordion-title py-4 px-16 lg:p-8 flex flex-col lg:flex-row lg:items-center lg:justify-between lg:border-b lg:border-black cursor-pointer
+        className={`accordion-title p-4 md:py-4 md:px-16 lg:p-8 flex flex-col lg:flex-row lg:items-center lg:justify-between lg:border-b lg:border-black cursor-pointer
         ${section.color}
         ${!isOpen ? "lg:bg-transparent" : section.color}
         `}
         onClick={toggleAccordion}
       >
-        <div className="w-1/2 lg:w-auto flex flex-col lg:flex-row lg:items-center gap-2 lg:gap-6 border-b border-black lg:border-b-0 pb-2 lg:pb-0">
+        <div className="w-2/3 md:w-1/2 lg:w-auto flex flex-col lg:flex-row lg:items-center gap-2 lg:gap-6 border-b border-black lg:border-b-0 pb-2 lg:pb-0">
           <span className="text-2xl lg:text-[64px]">{section.number}</span>
           <span className="text-2xl lg:text-[32px]">{section.name}</span>
         </div>
-        <div className="flex lg:block gap-2 self-end lg:self-auto mt-9 lg:mt-0">
-          <p className="text-xs lg:hidden">Ver más...</p>
-
+        <div className="flex lg:block gap-2 self-end lg:self-auto mt-20 md:mt-9 lg:mt-0">
+          <p className="text-xs lg:hidden">
+            {isOpen ? "Ver menos" : "Ver más"}...
+          </p>
           <div
             className={`arrowContainer ${
               isOpen ? "rotate-180 transition-all duration-200 ease-in-out" : ""

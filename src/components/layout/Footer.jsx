@@ -12,8 +12,8 @@ const Footer = () => {
 
       <div className="flex flex-col w-1/2 items-end">
         <span className="font-bodoni">REDES</span>
-        <InstagramIcon color="white" size="48" />
-        <WppIcon color="white" size="48" />
+        <InstagramIcon color="white" size={48} />
+        <WppIcon color="white" size={48} />
         <span className="text-sm mt-4">Córdoba, Argentina - 2023</span>
       </div>
     </footer>
