@@ -4,8 +4,7 @@ import { sectionsData } from "../../data/sectionData";
 
 const Sections = () => {
   return (
-    // <section className="accordions py-2 lg:px-[156px] lg:py-[88px]">
-    <section className="accordions lg:px-[156px] lg:py-[88px]">
+    <section className="accordions lg:px-[156px] lg:py-[88px] bg-ms-background">
       {sectionsData.map((section) => {
         return <Accordion key={section.name} section={section} />;
       })}

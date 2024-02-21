@@ -39,10 +39,10 @@ const AccordionInner = ({ sectionName, text, innerColor, media }) => {
                 className="lg:w-[400px]"
               />
             </div>
-            <div className="w-full flex flex-col xl:flex-row px-2.5 md:p-0">
+            <div className="w-full flex flex-col xl:flex-row">
               <div className="w-full lg:w-[400px] xl:w-1/2 flex flex-col md:items-center xl:items-start xl:mt-8">
                 <p className="text-sm md:text-lg lg:text-xl">Encontranos en:</p>
-                <div className="my-4 flex gap-6">
+                <div className="my-4 flex justify-between gap-6">
                   <Button
                     icon={ColoredWppIcon}
                     className={`${screenWidth < 768 ? "" : "isBlack"}`}

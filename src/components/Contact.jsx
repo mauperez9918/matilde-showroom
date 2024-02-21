@@ -5,6 +5,7 @@ import WppIcon from "./common/Icons/WppIcon";
 const instagramIcon = <InstagramIcon color="#000" size="38" />;
 const wppIcon = <WppIcon color="#000" size="38" />;
 
+// TODO: add whatsapp api
 const Contact = () => {
   return (
     <div className="accordion-contact justify-center min-[528px]:flex-row sm:flex ">
