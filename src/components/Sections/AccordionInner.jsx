@@ -1,15 +1,16 @@
 import PropTypes from "prop-types";
-import Button from "../common/Buttons/Button";
-import WppIcon from "../common/Icons/WppIcon";
+import WhatsappIcon from "../common/Icons/WhatsappIcon";
 import InstagramIcon from "../common/Icons/InstagramIcon";
 import useScreenWidth from "../../hooks/useScreenWidth";
+import WhatsappButton from "../common/Buttons/WhatsappButton";
+import InstagramButton from "../common/Buttons/InstagramButton";
 
 const AccordionInner = ({ sectionName, text, innerColor, media }) => {
   const screenWidth = useScreenWidth();
 
   const ColoredWppIcon = () => {
     const isBlack = screenWidth < 768 ? "black" : "white";
-    return <WppIcon color={isBlack} size={25} />;
+    return <WhatsappIcon color={isBlack} size={25} />;
   };
 
   const ColoredInstagramIcon = () => {
@@ -43,18 +44,20 @@ const AccordionInner = ({ sectionName, text, innerColor, media }) => {
               <div className="w-full lg:w-[400px] xl:w-1/2 flex flex-col md:items-center xl:items-start xl:mt-8">
                 <p className="text-sm md:text-lg lg:text-xl">Encontranos en:</p>
                 <div className="my-4 flex justify-between gap-6">
-                  <Button
+                  <WhatsappButton
                     icon={ColoredWppIcon}
                     className={`${screenWidth < 768 ? "" : "isBlack"}`}
+                    isButton={true}
                   >
                     Whatsapp
-                  </Button>
-                  <Button
+                  </WhatsappButton>
+                  <InstagramButton
                     icon={ColoredInstagramIcon}
                     className={`${screenWidth < 768 ? "" : "isBlack"}`}
+                    isButton={true}
                   >
                     Instagram
-                  </Button>
+                  </InstagramButton>
                 </div>
               </div>
               <div className="w-full lg:w-[400px] xl:w-1/2 z-20 lg:self-start mt-8 xl:-mt-20 xl:-ml-20">
