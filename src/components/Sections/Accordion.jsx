@@ -4,8 +4,12 @@ import PropTypes from "prop-types";
 import AccordionInner from "./AccordionInner";
 import "./Accordion.css";
 
+import useScreenWidth from "../../hooks/useScreenWidth";
+
 const Accordion = ({ section }) => {
   const [isOpen, setIsOpen] = useState(false);
+
+  const screenWidth = useScreenWidth();
 
   const toggleAccordion = () => {
     setIsOpen(!isOpen);
@@ -15,8 +19,9 @@ const Accordion = ({ section }) => {
     <div className="accordion">
       <div
         className={`accordion-title p-4 md:py-4 md:px-16 lg:p-8 flex flex-col lg:flex-row lg:items-center lg:justify-between lg:border-b lg:border-black cursor-pointer
-        ${section.color}
-        ${!isOpen ? "lg:bg-transparent" : section.color}
+        ${isOpen && screenWidth < 1024 ? "bg-transparent" : section.color} ${
+          !isOpen && screenWidth >= 1024 ? "bg-transparent" : section.color
+        }
         `}
         onClick={toggleAccordion}
       >

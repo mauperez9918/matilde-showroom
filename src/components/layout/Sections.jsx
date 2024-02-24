@@ -1,5 +1,4 @@
 import Accordion from "../Sections/Accordion";
-// import AccordionOld from "../Sections/AccordionOld";
 import { sectionsData } from "../../data/sectionData";
 
 const Sections = () => {
