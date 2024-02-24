@@ -2,7 +2,6 @@ import PropTypes from "prop-types";
 
 const Button = ({ icon: Icon, children, className = "", ...args }) => {
   const isBlack = className.includes("isBlack");
-  console.log('isBlack', isBlack)
 
   return (
     <button

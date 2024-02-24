@@ -7,6 +7,7 @@ export default {
   theme: {
     fontFamily: {
       bodoni: ["Bodoni Moda"],
+      brygada: ["Brygada 1918"],
       workSans: ["Work Sans"],
       sans: ['"Ruda"', defaultTheme.fontFamily.sans],
     },
