@@ -5,6 +5,9 @@ import useScreenWidth from "../../hooks/useScreenWidth";
 import WhatsappButton from "../common/Buttons/WhatsappButton";
 import InstagramButton from "../common/Buttons/InstagramButton";
 
+import Caroussel from "../Caroussel/Caroussel";
+import carousselData from "../../data/carousselData";
+
 const AccordionInner = ({ sectionName, text, innerColor, media }) => {
   const screenWidth = useScreenWidth();
 
@@ -22,14 +25,17 @@ const AccordionInner = ({ sectionName, text, innerColor, media }) => {
     switch (sectionName) {
       case "Producciones":
         return (
-          <div className="w-full lg:w-1/2">
-            <p
-              dangerouslySetInnerHTML={{ __html: text }}
-              className="lg:w-[400px] font-workSans text-sm md:text-lg lg:text-xl"
-            />
-            {/* TODO: implement producciones inner */}
-            <div className="w-1/2"></div>
-          </div>
+          <>
+            <div className="w-full xl:w-1/2">
+              <p
+                dangerouslySetInnerHTML={{ __html: text }}
+                className="lg:w-[400px] font-workSans text-sm md:text-lg lg:text-xl"
+              />
+            </div>
+            <div className="w-[90%] mx-auto mt-8 xl:w-1/2 z-20 self-end">
+              <Caroussel images={carousselData} />
+            </div>
+          </>
         );
       case "Contacto":
         return (
