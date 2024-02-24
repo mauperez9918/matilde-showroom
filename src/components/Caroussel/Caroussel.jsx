@@ -5,8 +5,22 @@ import "./Caroussel.css";
 
 import PropTypes from "prop-types";
 
+import useScreenWidth from "../../hooks/useScreenWidth";
+
 const Caroussel = ({ images }) => {
+  const screenWidth = useScreenWidth();
+
   const settings = {
+    className: "center",
+    centerMode: true,
+    infinite: true,
+    dots: false,
+    speed: 500,
+    centerPadding: "30px",
+    slidesToShow: 1,
+  };
+
+  const ipadSettings = {
     className: "center",
     centerMode: true,
     infinite: true,
@@ -16,9 +30,29 @@ const Caroussel = ({ images }) => {
     slidesToShow: 3,
   };
 
+  const desktopSettings = {
+    className: "center",
+    centerMode: true,
+    infinite: true,
+    dots: false,
+    speed: 500,
+    centerPadding: "140px",
+    slidesToShow: 1,
+  };
+
+  let sliderSettings;
+
+  if (screenWidth < 768) {
+    sliderSettings = settings;
+  } else if (screenWidth < 1024) {
+    sliderSettings = ipadSettings;
+  } else if (screenWidth >= 1200) {
+    sliderSettings = desktopSettings;
+  }
+
   return (
     <div>
-      <Slider {...settings}>
+      <Slider {...sliderSettings}>
         {images.map((image, index) => {
           return (
             <div key={index}>
