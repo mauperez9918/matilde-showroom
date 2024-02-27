@@ -1,7 +1,7 @@
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import "./Caroussel.css";
+import "./style.css";
 
 import PropTypes from "prop-types";
 
@@ -10,45 +10,43 @@ import useScreenWidth from "../../hooks/useScreenWidth";
 const Caroussel = ({ images }) => {
   const screenWidth = useScreenWidth();
 
+  const commonSettings = {
+    className: "center",
+    centerMode: true,
+    infinite: true,
+    dots: false,
+    speed: 500,
+  };
+
   const settings = {
-    className: "center",
-    centerMode: true,
-    infinite: true,
-    dots: false,
-    speed: 500,
-    centerPadding: "30px",
-    slidesToShow: 1,
+    sm: {
+      ...commonSettings,
+      centerPadding: "30px",
+      slidesToShow: 1,
+    },
+    md: {
+      ...commonSettings,
+      centerPadding: "00px",
+      slidesToShow: 3,
+    },
+    xl: {
+      ...commonSettings,
+      centerPadding: "140px",
+      slidesToShow: 1,
+    },
   };
 
-  const ipadSettings = {
-    className: "center",
-    centerMode: true,
-    infinite: true,
-    dots: false,
-    speed: 500,
-    centerPadding: "00px",
-    slidesToShow: 3,
+  const getSliderSettings = () => {
+    if (screenWidth < 768) {
+      return settings.sm;
+    } else if (screenWidth < 1024) {
+      return settings.md;
+    } else {
+      return settings.xl;
+    }
   };
 
-  const desktopSettings = {
-    className: "center",
-    centerMode: true,
-    infinite: true,
-    dots: false,
-    speed: 500,
-    centerPadding: "140px",
-    slidesToShow: 1,
-  };
-
-  let sliderSettings;
-
-  if (screenWidth < 768) {
-    sliderSettings = settings;
-  } else if (screenWidth < 1024) {
-    sliderSettings = ipadSettings;
-  } else if (screenWidth >= 1200) {
-    sliderSettings = desktopSettings;
-  }
+  const sliderSettings = getSliderSettings();
 
   return (
     <div>

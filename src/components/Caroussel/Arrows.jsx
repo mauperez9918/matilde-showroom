@@ -3,7 +3,6 @@ import Arrow from "../common/Icons/Arrow";
 import carousselData from "../../data/carousselData";
 
 const Arrows = ({ position, decreasePosition, increasePosition }) => {
-  // TODO: change size and color of arrows
   return (
     <div className="h-12">
       {position > 0 && (
