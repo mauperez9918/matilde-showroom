@@ -46,6 +46,7 @@ npm run dev
 
 ## Estructura del Proyecto
 
+```plaintext
 src/
 ├── components/   # Componentes reutilizables de la aplicación
 │   ├── banner/   # Componentes relacionados con el banner principal
@@ -59,6 +60,7 @@ src/
 ├── App.jsx       # Componente principal que renderiza la aplicación
 ├── main.jsx      # Punto de entrada de React
 └── index.css     # Estilos globales para la aplicación
+```
 
 ## Autores
 
