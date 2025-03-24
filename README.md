@@ -46,19 +46,19 @@ npm run dev
 
 ## Estructura del Proyecto
 
-.src/
-├── components/ # Componentes reutilizables de la aplicación
-│ ├── banner/ # Componentes relacionados con el banner principal
-│ ├── Caroussel/ # Componentes para el carrusel de imágenes
-│ ├── common/ # Componentes comunes como botones, iconos, etc.
-│ ├── layout/ # Componentes de disposición general (header, footer, etc.)
-│ └── Sections/ # Secciones específicas de la aplicación (home, about, etc.)
-├── data/ # Datos estáticos o mocks para simular APIs
-├── hooks/ # Hooks personalizados para lógica reutilizable
-├── Images/ # Recursos de imágenes utilizados en la aplicación
-├── App.jsx # Componente principal que renderiza la aplicación
-├── main.jsx # Punto de entrada de React
-└── index.css # Estilos globales para la aplicación
+src/
+├── components/   # Componentes reutilizables de la aplicación
+│   ├── banner/   # Componentes relacionados con el banner principal
+│   ├── carousel/ # Componentes para el carrusel de imágenes
+│   ├── common/   # Componentes comunes como botones, iconos, etc.
+│   ├── layout/   # Componentes de disposición general (header, footer, etc.)
+│   └── sections/ # Secciones específicas de la aplicación (home, about, etc.)
+├── data/         # Datos estáticos o mocks para simular APIs
+├── hooks/        # Hooks personalizados para lógica reutilizable
+├── images/       # Recursos de imágenes utilizados en la aplicación
+├── App.jsx       # Componente principal que renderiza la aplicación
+├── main.jsx      # Punto de entrada de React
+└── index.css     # Estilos globales para la aplicación
 
 ## Autores
 
