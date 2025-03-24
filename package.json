@@ -1,6 +1,7 @@
 {
   "name": "matilde-showroom",
   "private": true,
+  "author": "Mauricio Perez y Anna Esteve",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
