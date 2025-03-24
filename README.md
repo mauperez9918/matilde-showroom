@@ -1,8 +1,8 @@
-#Matilde Showroom
+# Matilde Showroom
 
 Matilde Showroom es una tienda de moda femenina desarrollada con React y Tailwind CSS. Este proyecto busca ofrecer una experiencia de usuario fluida y visualmente atractiva para la compra de productos en línea.
 
-##Tecnologías Utilizadas
+## Tecnologías Utilizadas
 
 - React 18.2.0
 
@@ -14,7 +14,7 @@ Matilde Showroom es una tienda de moda femenina desarrollada con React y Tailwin
 
 - Animate.css (para animaciones)
 
-##Instalación y Configuración
+## Instalación y Configuración
 
 Clona el repositorio:
 
@@ -34,7 +34,7 @@ npm install
 
 npm run dev
 
-##Scripts Disponibles
+## Scripts Disponibles
 
 - npm run dev: Inicia el entorno de desarrollo con Vite.
 
@@ -44,28 +44,28 @@ npm run dev
 
 - npm run lint: Ejecuta ESLint para revisar errores en el código.
 
-##Estructura del Proyecto
+## Estructura del Proyecto
 
-📂 src
-├── 📂 components # Componentes reutilizables
-│ ├── 📂 Banner  
-│ ├── 📂 Caroussel  
-│ ├── 📂 common # Botones, iconos, etc.
-│ ├── 📂 layout # Disposición general
-│ ├── 📂 Sections # Secciones específicas
-├── 📂 data # Datos estáticos o mocks
-├── 📂 hooks # Hooks personalizados
-├── 📂 Images # Recursos de imágenes
-├── App.jsx # Componente principal
+src/
+├── components/ # Componentes reutilizables de la aplicación
+│ ├── banner/ # Componentes relacionados con el banner principal
+│ ├── Caroussel/ # Componentes para el carrusel de imágenes
+│ ├── common/ # Componentes comunes como botones, iconos, etc.
+│ ├── layout/ # Componentes de disposición general (header, footer, etc.)
+│ └── Sections/ # Secciones específicas de la aplicación (home, about, etc.)
+├── data/ # Datos estáticos o mocks para simular APIs
+├── hooks/ # Hooks personalizados para lógica reutilizable
+├── Images/ # Recursos de imágenes utilizados en la aplicación
+├── App.jsx # Componente principal que renderiza la aplicación
 ├── main.jsx # Punto de entrada de React
-├── index.css # Estilos globales
+└── index.css # Estilos globales para la aplicación
 
 ## Autores
 
 ### Desarrollo
 
-- Mauricio Pérez
-- Anna Esteve Romagosa
+- Mauricio Pérez (https://github.com/mauperez9918)
+- Anna Esteve Romagosa (https://github.com/annalemonbcn)
 
 ### Diseño
 
@@ -73,11 +73,12 @@ npm run dev
 - Joaquin Méndez
 - Adriana Dellatorre
 
-##📌 Nota sobre el contenido
+## 📌 Nota sobre el contenido
+
 Este proyecto fue desarrollado para Matilde Showroom como parte de un trabajo educativo.
 El código fuente y los recursos visuales utilizados en este repositorio tienen fines de demostración.
 El logo y otros elementos gráficos son propiedad de Matilde Showroom y se muestran con permiso.
 
-##Licencia
+## Licencia
 
 - Este proyecto está bajo la licencia MIT.
