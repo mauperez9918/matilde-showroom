@@ -60,11 +60,23 @@ npm run dev
 ├── main.jsx # Punto de entrada de React
 ├── index.css # Estilos globales
 
-##Autores
+## Autores
+
+### Desarrollo
 
 - Mauricio Pérez
+- Anna Esteve Romagosa
 
-- Anna Esteve
+### Diseño
+
+- Alejandro Bacchero
+- Joaquin Méndez
+- Adriana Dellatorre
+
+##📌 Nota sobre el contenido
+Este proyecto fue desarrollado para Matilde Showroom como parte de un trabajo educativo.
+El código fuente y los recursos visuales utilizados en este repositorio tienen fines de demostración.
+El logo y otros elementos gráficos son propiedad de Matilde Showroom y se muestran con permiso.
 
 ##Licencia
 

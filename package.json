@@ -1,7 +1,28 @@
 {
   "name": "matilde-showroom",
-  "private": true,
   "author": "Mauricio Perez y Anna Esteve",
+  "contributors": [
+    {
+      "name": "Mauricio Pérez",
+      "role": "Desarrollador"
+    },
+    {
+      "name": "Anna Esteve",
+      "role": "Desarrolladora"
+    },
+    {
+      "name": "Alejandro Bacchero",
+      "role": "Diseñador/a"
+    },
+    {
+      "name": "Joaquin Méndez",
+      "role": "Diseñador/a"
+    },
+    {
+      "name": "Adriana Dellatorre",
+      "role": "Diseñador/a"
+    }
+  ],
   "version": "0.0.0",
   "type": "module",
   "scripts": {
