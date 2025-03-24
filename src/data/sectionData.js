@@ -9,7 +9,7 @@ export const sectionsData = [
     media: Ana,
     number: "01",
     color: "bg-ms-brown",
-    secondaryColor: "bg-ms-brown-light"
+    secondaryColor: "bg-ms-brown-light",
   },
   {
     name: "Showroom",
@@ -17,7 +17,7 @@ export const sectionsData = [
     media: perchero,
     number: "02",
     color: "bg-ms-blue",
-    secondaryColor: "bg-ms-blue-light"
+    secondaryColor: "bg-ms-blue-light",
   },
   {
     name: "Producciones",
@@ -25,7 +25,7 @@ export const sectionsData = [
     media: "",
     number: "03",
     color: "bg-ms-green",
-    secondaryColor: "bg-ms-green-light"
+    secondaryColor: "bg-ms-green-light",
   },
   {
     name: "Contacto",
@@ -33,6 +33,6 @@ export const sectionsData = [
     media: map,
     number: "04",
     color: "bg-ms-creme",
-    secondaryColor: "bg-ms-creme-light"
+    secondaryColor: "bg-ms-creme-light",
   },
 ];
