@@ -46,7 +46,7 @@ npm run dev
 
 ## Estructura del Proyecto
 
-src/
+.src/
 ├── components/ # Componentes reutilizables de la aplicación
 │ ├── banner/ # Componentes relacionados con el banner principal
 │ ├── Caroussel/ # Componentes para el carrusel de imágenes
